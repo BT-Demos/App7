@@ -11,71 +11,71 @@ jobs:
   pre-prod:
     environment: pre-prod
     steps:
-      - name: Deploy App5-Frontend to Preprod
+      - name: Deploy App7-Frontend to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].digest }}
           target-environment: pre-prod
-          name: App5-Frontend
+          name: App7-Frontend
 
-      - name: Deploy App5-Backend to Preprod
+      - name: Deploy App7-Backend to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].digest }}
           target-environment: pre-prod
-          name: App5-Backend
+          name: App7-Backend
 
-      - name: Deploy App5-APIs to Preprod
+      - name: Deploy App7-APIs to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].digest }}
           target-environment: pre-prod
-          name: App5-APIs
+          name: App7-APIs
   prod:
     needs: pre-prod
     environment: prod
     steps:
-      - name: Deploy App5-Frontend to Prod
+      - name: Deploy App7-Frontend to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-Frontend']['App5-Frontend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-Frontend']['App7-Frontend'].digest }}
           target-environment: prod
-          name: App5-Frontend
+          name: App7-Frontend
 
-      - name: Deploy App5-Backend to Prod
+      - name: Deploy App7-Backend to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-Backend']['App5-Backend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-Backend']['App7-Backend'].digest }}
           target-environment: prod
-          name: App5-Backend
+          name: App7-Backend
 
-      - name: Deploy App5-APIs to Prod
+      - name: Deploy App7-APIs to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App5-APIs']['App5-APIs'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App7-APIs']['App7-APIs'].digest }}
           target-environment: prod
-          name: App5-APIs
+          name: App7-APIs
